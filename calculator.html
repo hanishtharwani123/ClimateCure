@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClimateCure : the cure for carbon emissions</title>
+    <link rel="stylesheet" href="calculator.css">
+    <link rel="stylesheet" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <nav>
+        <span class="logo-name">ClimateCure</span>
+        <div class="mode">
+            <span class="mode-name">Dark mode</span>
+            <img src="images/moon.png" id="dark-mode" loading="lazy">
+        </div>
+    </nav>
+
+    <div class="main">
+        <div class="title">
+            <img src="images/carbon-footprint.png" id="foot">
+            <span class="calc-name">Calculate your carbon footprint</span>
+        </div>
+        <div class="flexx">
+            <form id="container" class="container" onsubmit="footprint_calc(); return false">
+                <div class="card1">
+                    <label class="name">Electricity <br class="break"> consumption</label>
+                    <input type="number" id="input-value1" placeholder="kWh" class="input-value">
+                </div>
+                <div class="card1">
+                    <label class="name">Fuel <br class="break"> consumption</label>
+                    <input type="number" id="input-value2" placeholder="liters" class="input-value">
+                </div>
+                <div class="card1">
+                    <label class="name">LPG <br class="break"> consumption</label>
+                    <input type="number" id="input-value3" placeholder="kg" class="input-value">
+                </div>
+                <div class="card1">
+                    <label class="name">Food <br class="break"> consumption</label>
+                    <input type="number" id="input-value4" placeholder="kg" class="input-value">
+                </div>
+                <div class="card1">
+                    <label class="name">Waste <br class="break"> consumption</label>
+                    <input type="number" id="input-value5" placeholder="kg" class="input-value">
+                </div>
+                <div class="card1">
+                    <label class="name">Transport <br class="break"> emmision</label>
+                    <input type="number" id="input-value6" placeholder="kg" class="input-value">
+                </div>
+                <div class="btn">
+                    <button id="calc">Calculate</button>
+                </div>
+            </form>
+            <span class="about"><i class="fa-solid fa-quote-left"></i> To calculate your total carbon
+                footprint, you will need to estimate your greenhouse
+                gas
+                emissions from various sources including electricity consumption, fuel consumption, food
+                consumption,
+                waste generation, and transportation emissions.
+                For each of these sources, you will need to determine the amount consumed over a specific period of
+                time
+                (such as a month or a year) <i class="fa-solid fa-quote-right"></i></span>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="foot">
+            <div class="logo1">
+                <span class="logo-name">ClimateCure</span>
+            </div>
+            <h1 class="made">Made with ❤️ by,</h1>
+            <h1 class="made1">Hanish Tharwani</h1>
+        </div>
+        <div class="social">
+            <a href="https://github.com/hanishtharwani123" class="link"><i class="fa-brands fa-github"
+                    id="icons1"></i></a>
+            <a href="https://twitter.com/TharwaniHanish" class="link"><i class="fa-brands fa-twitter"
+                    id="icons2"></i></a>
+            <a href="https://www.linkedin.com/in/hanish-tharwani/" class="link"><i class="fa-brands fa-linkedin-in"
+                    id="icons3"></i></i></a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        let mode_name = document.querySelector('.mode-name')
+        let icon = document.getElementById("dark-mode");
+        let mode = document.querySelector('.mode')
+        mode.addEventListener('click', () => {
+            let white = document.body.classList.toggle('dark-theme');
+            if (document.body.classList.contains('dark-theme')) {
+                mode_name.innerHTML = `Light mode`;
+                icon.src = 'images/sun.png';
+            } else {
+                icon.src = 'images/moon.png';
+                mode_name.innerHTML = `Dark mode`;
+            }
+        })
+    </script>
+</body>

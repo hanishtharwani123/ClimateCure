@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClimateCure : the cure for carbon emissions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="favicon.ico">
+</head>
+
+<body>
+    <div id="home">
+        <nav>
+            <span class="logo-name">ClimateCure</span>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#climate-change">Climate change</a></li>
+                <li><a href="#carbon-foot">Carbon footprint</a></li>
+                <li><a href="#contact-us">Contact us</a></li>
+            </ul>
+            <div class="mode">
+                <span class="mode-name">Dark mode</span>
+                <img src="images/moon.png" id="dark-mode" loading="lazy">
+            </div>
+        </nav>
+        <div class="main">
+            <div class="container">
+                <span class="tagline">Measure Your Impact on the Environment and Take Action</span>
+                <button id="get-start" onclick="window.location.href='calculator.html';">Get Started<i
+                        class="fa fa-duotone fa-arrow-right" id="arrow"></i></button>
+            </div>
+            <img src="images/earth.png" id="earth">
+        </div>
+    </div>
+
+    <div id="climate-change">
+        <div class="climate">
+            <div class="img-climate1">
+                <img src="images/q.jpg" id="img-clim" loading="lazy">
+            </div>
+            <div class="about-climate">
+                <span class="title">Climate Change</span>
+                <span class="detail-clim">
+                    Climate change is a complex and pressing issue that is affecting the planet's ecosystems, weather
+                    patterns, and human societies. It is caused by the accumulation of greenhouse gases in the
+                    atmosphere, primarily carbon dioxide (CO2), which trap heat and cause the Earth's temperature to
+                    rise.
+                    <br>
+                    Human activities, particularly the burning of fossil fuels like coal, oil, and gas, have contributed
+                    to the increase of greenhouse gases in the atmosphere. These activities release large amounts of CO2
+                    into the atmosphere, and deforestation and other land-use changes have also contributed to the
+                    accumulation of greenhouse gases.
+                    <br>
+                    To mitigate the impacts of climate change, it is essential to reduce greenhouse gas emissions. This
+                    can be done through a variety of means, including increasing the use of renewable energy sources
+                    such as wind and solar power, improving energy efficiency, and reducing deforestation. Additionally,
+                    adapting to the impacts of climate change will be necessary, particularly for vulnerable
+                    communities.
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div id="carbon-foot">
+        <div class="climate">
+            <div class="about-climate1">
+                <span class="title">Carbon footprint</span>
+                <span class="detail-clim1">
+                    Carbon footprint refers to the amount of greenhouse gas emissions that are generated through human
+                    activities such as transportation, energy consumption, and food production. These emissions
+                    contribute to climate change, which is causing significant environmental and social impacts
+                    worldwide. Every time you travel by car, charge your mobile phone, switch on the TV or run the
+                    washing machine, and many other thousands of routine activities, you leave a trail of gases in your
+                    wake that build up in the atmosphere and contribute to global warming
+                    <br>
+                    To understand your personal carbon footprint, you can use a carbon footprint calculator. These
+                    calculators take into account various aspects of your lifestyle, including your energy use at home,
+                    your transportation habits, and your diet.
+                    <br>
+                </span>
+                <button id="go-foot" onclick="window.location.href='calculator.html';">Calculate</button>
+            </div>
+            <div class="img-climate">
+                <img src="images/foot.jpg" id="img-clim1" loading="lazy">
+            </div>
+        </div>
+    </div>
+
+    <div id="contact-us">
+        <div class="cen">
+            <div class="us">
+                <span class="touch">Contact Us</span>
+            </div>
+            <form action="https://formsubmit.co/hanish.tharwani2021@vitbhopal.ac.in" method="POST">
+                <div>
+                    <input type="text" name="name" placeholder="Your Name" id="name">
+                </div>
+                <div>
+                    <input type="email" name="email" placeholder="Your Email " id="email">
+                </div>
+                <div>
+                    <textarea name="Message" id="message" rows="6" placeholder="Enter Your Message"></textarea>
+                </div>
+                <button class="leave">SEND</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="foot">
+            <div class="logo1">
+                <span class="logo-name">ClimateCure</span>
+            </div>
+            <h1 class="made">Made with ❤️ by,</h1>
+            <h1 class="made1">Hanish Tharwani</h1>
+        </div>
+        <div class="social">
+            <a href="https://github.com/hanishtharwani123" class="link"><i class="fa-brands fa-github"
+                    id="icons1"></i></a>
+            <a href="https://twitter.com/TharwaniHanish" class="link"><i class="fa-brands fa-twitter"
+                    id="icons2"></i></a>
+            <a href="https://www.linkedin.com/in/hanish-tharwani/" class="link"><i class="fa-brands fa-linkedin-in"
+                    id="icons3"></i></i></a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        let mode_name = document.querySelector('.mode-name')
+        let icon = document.getElementById("dark-mode");
+        let mode = document.querySelector('.mode')
+        mode.addEventListener('click', () => {
+            let white = document.body.classList.toggle('dark-theme');
+            if (document.body.classList.contains('dark-theme')) {
+                mode_name.innerHTML = `Light mode`;
+                icon.src = 'images/sun.png';
+            } else {
+                icon.src = 'images/moon.png';
+                mode_name.innerHTML = `Dark mode`;
+            }
+        })
+    </script>
+</body>
+
+</html>
